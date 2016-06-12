@@ -1,128 +1,131 @@
 ---
 homebrew_taps:
   - caskroom/cask
-  - adamchainz/tap
+  # - adamchainz/tap
 
 homebrew_package_removals:
-  - python34
+  # - python34
 
 homebrew_packages:
-  - autoconf
-  - autojump
-  - automake
-  - bazaar
-  - cloc
-  - coreutils
-  - cowsay
-  - exiftool
-  - fdupes
-  - ffmpeg
-  - freetype
-  - fswatch
-  - gdbm
-  - git
-  - gpg
-  - hub
-  - imagemagick
-  - jhead
-  - jpeg
-  - jpegoptim
-  - jq
-  - lesspipe
-  - libevent
-  - libmemcached
-  - libpng
-  - libtool
-  - libyaml
-  - md5sha1sum
-  - memcached
-  - ncdu
+  - zsh
+  # - autoconf
+  # - autojump
+  # - automake
+  # - bazaar
+  # - cloc
+  # - coreutils
+  # - cowsay
+  # - exiftool
+  # - fdupes
+  # - ffmpeg
+  # - freetype
+  # - fswatch
+  # - gdbm
+  # - git
+  # - gpg
+  # - hub
+  # - imagemagick
+  # - jhead
+  # - jpeg
+  # - jpegoptim
+  # - jq
+  # - lesspipe
+  # - libevent
+  # - libmemcached
+  # - libpng
+  # - libtool
+  # - libyaml
+  # - md5sha1sum
+  # - memcached
+  # - ncdu
   - node
-  - openssl
-  - ossp-uuid
-  - percona-toolkit
-  - pkg-config
-  - pngcrush
-  - postgresql
-  - pwgen
-  - pypy
-  - python
-  - python3
-  - readline
-  - rtmpdump
-  - ruby
-  - ruby-build
-  - ruby-install
-  - shellcheck
-  - sqlite
-  - tree
-  - watch
-  - wget
-  - xz
-  - youtube-dl
-  - zsh-completions
+  # - openssl
+  # - ossp-uuid
+  # - percona-toolkit
+  # - pkg-config
+  # - pngcrush
+  # - postgresql
+  # - pwgen
+  # - pypy
+  # - python
+  # - python3
+  # - readline
+  # - rtmpdump
+  # - ruby
+  # - ruby-build
+  # - ruby-install
+  # - shellcheck
+  # - sqlite
+  # - tree
+  # - watch
+  # - wget
+  # - xz
+  # - youtube-dl
+  # - zsh-completions
 
 homebrew_cask_packages:
   - alfred
-  - anki
-  - arq
-  - bettertouchtool
-  - bitbar
-  - calibre
-  - colloquy
-  - disk-inventory-x
-  - evernote
-  - firefox
-  - flux
-  - google-chrome
-  - iterm2
-  - karabiner
-  - keyboard-maestro
-  - mactex
-  - pgadmin3
-  - playonmac
-  - rescuetime
-  - sequel-pro
-  - slack
-  - skim
-  - skype
-  - soundcleod
-  - steam
-  - sublime-text
-  - techstoreclub-simple-comic
-  - texmaker
-  - utorrent
-  - vagrant
-  - virtualbox
-  - vlc
+  # - alfred
+  # - anki
+  # - arq
+  # - bettertouchtool
+  # - bitbar
+  # - calibre
+  # - colloquy
+  # - disk-inventory-x
+  # - evernote
+  # - firefox
+  # - flux
+  # - google-chrome
+  # - iterm2
+  # - karabiner
+  # - keyboard-maestro
+  # - mactex
+  # - pgadmin3
+  # - playonmac
+  # - rescuetime
+  # - sequel-pro
+  # - slack
+  # - skim
+  # - skype
+  # - soundcleod
+  # - steam
+  # - sublime-text
+  # - techstoreclub-simple-comic
+  # - texmaker
+  # - utorrent
+  # - vagrant
+  # - virtualbox
+  # - vlc
 
 pip_packages:
-  - 'https://bitbucket.org/adamchainz/pygments-ipython-console/get/master.zip#egg=pygments-ipython-console'
-  - csvkit
-  - dynamodb_utils
-  - ec2-ssh-yplan
-  - flake8
-  - ipdb
-  - ipython
-  - lifelogger
-  - numpy
-  - pandas
-  - pathlib
-  - pep8
-  - pygments
-  - pylint
-  - pythonpy
-  - pyyaml
-  - requests
-  - scipy
-  - sh
-  - six
-  - tldr
-  - virtualenvwrapper
+  # - 'https://bitbucket.org/adamchainz/pygments-ipython-console/get/master.zip#egg=pygments-ipython-console'
+  # - csvkit
+  # - dynamodb_utils
+  # - ec2-ssh-yplan
+  # - flake8
+  # - ipdb
+  # - ipython
+  # - lifelogger
+  # - numpy
+  # - pandas
+  # - pathlib
+  # - pep8
+  # - pygments
+  # - pylint
+  # - pythonpy
+  # - pyyaml
+  # - requests
+  # - scipy
+  # - sh
+  # - six
+  # - tldr
+  # - virtualenvwrapper
 
 npm_packages:
   - ember-cli
 
 gem_packages:
-  - jekyll
-  - jekyll-tagging
+  - compass
+  # - jekyll
+  # - jekyll-tagging

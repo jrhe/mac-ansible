@@ -8,12 +8,12 @@
   include: osx_settings.yml
   tags: osx
 
-- name: Link in dotfiles
-  include: dotfiles.yml
-
-- name: Copy in/clone app settings
-  include: app_settings.yml
-
-- name: Cron settings
-  include: cron.yml
-  tags: [cron]
+# - name: Link in dotfiles
+#   include: dotfiles.yml
+#
+# - name: Copy in/clone app settings
+#   include: app_settings.yml
+#
+# - name: Cron settings
+#   include: cron.yml
+#   tags: [cron]

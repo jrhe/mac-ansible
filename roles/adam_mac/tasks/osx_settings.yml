@@ -3,10 +3,11 @@
     key: AppleShowAllExtensions
     bool: true
 
-- name: OS X Global | Normal scrolling
-  osx_defaults:
-    key: com.apple.swipescrolldirection
-    bool: false
+# Not working on Yosemite
+# - name: OS X Global | Normal scrolling
+#   osx_defaults:
+#     key: com.apple.swipescrolldirection
+#     bool: false
 
 - name: OS X Global | Save panel expanded
   osx_defaults:
@@ -22,6 +23,11 @@
   osx_defaults:
     key: AppleKeyboardUIMode
     int: 3
+
+- name: OS X Global | Enable subpixel font rendering on non-Apple LCDs
+  osx_defaults:
+    key: AppleFontSmoothing
+    int: 2 # 2 is default for Apple LCDs
 
 - name: Dock | Quick autohide
   osx_defaults:

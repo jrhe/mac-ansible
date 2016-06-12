@@ -7,6 +7,11 @@ homebrew_package_removals:
   # - python34
 
 homebrew_packages:
+  - homebrew/versions/elasticsearch17
+  - node
+  - postgres
+  - tmux
+  - vim
   - zsh
   # - autoconf
   # - autojump
@@ -38,7 +43,6 @@ homebrew_packages:
   # - md5sha1sum
   # - memcached
   # - ncdu
-  - node
   # - openssl
   # - ossp-uuid
   # - percona-toolkit
@@ -65,6 +69,8 @@ homebrew_packages:
 
 homebrew_cask_packages:
   - alfred
+  # - elasticsearch
+  - macvim
   # - alfred
   # - anki
   # - arq

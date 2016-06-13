@@ -3,15 +3,14 @@
     key: AppleShowAllExtensions
     bool: true
 
-# Not working on Yosemite
-# - name: OS X Global | Normal scrolling
-#   osx_defaults:
-#     key: com.apple.swipescrolldirection
-#     bool: false
-
 - name: OS X Global | Save panel expanded
   osx_defaults:
     key: NSNavPanelExpandedStateForSaveMode
+    bool: yes
+
+- name: OS X Global | Print panel expanded
+  osx_defaults:
+    key: PMPrintingExpandedStateForPrint
     bool: yes
 
 - name: OS X Global | Use function key to get at special meanings of keys
@@ -29,40 +28,56 @@
     key: AppleFontSmoothing
     int: 2 # 2 is default for Apple LCDs
 
-- name: Dock | Quick autohide
+- name: OS X Global | Disable press and hold
   osx_defaults:
-    domain: com.apple.dock
-    key: autohide-time-modifier
-    int: 1
-  notify: kill dock
+    key: ApplePressAndHoldEnabled
+    bool: false
 
-- name: Dock | Size
+- name: OS X Global | Disable Autocorrect
   osx_defaults:
-    domain: com.apple.dock
-    key: tilesize
-    int: 48
-  notify: kill dock
+    key: NSAutomaticSpellingCorrectionEnabled
+    bool: false
 
-# - name: Dock | No persistent apps
-#   osx_defaults:
-#     domain: com.apple.dock
-#     key: persistent-apps
-#     array: []
-#   notify: kill dock
-
-- name: Dock | Quick expose
+- name: OS X Global | Always show scroll bars
   osx_defaults:
-    domain: com.apple.dock
-    key: expose-animation-duration
-    float: 0.1
-  notify: kill dock
+    key: AppleShowScrollBars
+    string: "Always"
 
-- name: Dock | Dashboard disabled
+- name: OS X Global | Add a context menu for showing the Web Inspector in web views
   osx_defaults:
-    domain: com.apple.dashboard
-    key: mcx-disabled
+    key: WebKitDeveloperExtras
     bool: yes
-  notify: kill dock
+
+
+- name: Finder | Use current directory as default seach scope
+  osx_defaults:
+    domain: com.apple.finder
+    key: FXDefaultSearchScope
+    string: "SCcf"
+
+- name: Finder | Show Path Bar
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowPathbar
+    bool: true
+
+- name: Finder | Show Status Bar
+  osx_defaults:
+    domain: com.apple.finder
+    key: ShowStatusBar
+    bool: true
+
+- name: Finder | Allow quitting with cmd Q
+  osx_defaults:
+    domain: com.apple.finder
+    key: QuitMenuItem
+    bool: true
+
+- name: Finder | Display full POSIX path as Finder window title
+  osx_defaults:
+    domain: com.apple.finder
+    key: _FXShowPosixPathInTitle
+    bool: true
 
 - name: Finder | Home folder on new windows
   osx_defaults:
@@ -92,22 +107,79 @@
     bool: yes
   notify: kill finder
 
-- name: Terminal | Get current settings
-  command: plutil -convert xml1 -o - ~/Library/Preferences/com.apple.Terminal.plist
-  changed_when: false
-  register: terminal_settings
-
-- name: Terminal | Theme
-  when: "'<key>Chainz</key>' not in terminal_settings.stdout"
-  command: open {{ ansible_env.PWD }}/roles/adam_mac/files/Chainz.terminal
-
-- name: Terminal | My theme everywhere
+- name: Finder | Disable extension change warning
   osx_defaults:
-    domain: com.apple.terminal
-    key: "{{ item }}"
-    string: "Chainz"
-  with_items:
-    - Default Window Settings
-    - Startup Window Settings
+    domain: com.apple.finder
+    key: FXEnableExtensionChangeWarning
+    bool: no
+  notify: kill finder
+
+- name: Finder | Show item info below desktop items
+  command: /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
+  changed_when: false
+  notify: kill finder
+
+
+- name: Dock | No glossy 3d dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: no-glass
+    bool: true
+  notify: kill dock
+
+- name: Dock | Process Indicators
+  osx_defaults:
+    domain: com.apple.dock
+    key: show-process-indicators
+    bool: true
+  notify: kill dock
+
+- name: Dock | Dashboard disabled
+  osx_defaults:
+    domain: com.apple.dashboard
+    key: mcx-disabled
+    bool: yes
+  notify: kill dock
+
+
+- name: Menu | Disable transparency
+  osx_defaults:
+    key: AppleEnableMenuBarTransparency
+    bool: false
+
+
+- name: Battery | Show Time
+  osx_defaults:
+    domain: com.apple.menuextra.battery
+    key: ShowTime
+    string: "YES"
+
+- name: Battery | Show Percent
+  osx_defaults:
+    domain: com.apple.menuextra.battery
+    key: ShowPercent
+    string: "YES"
+
+
+- name: Launch Services | Disable are you sure you want to open this app dialog
+  osx_defaults:
+    domain: com.apple.LaunchServices
+    key: LSQuarantine
+    bool: false
+
+
+- name: Desktop Services | Don't create .DS_Store files on network volumes
+  osx_defaults:
+    domain: com.apple.desktopservices
+    key: DSDontWriteNetworkStores
+    bool: true
+
+
+- name: Login Window | Don't save window state
+  osx_defaults:
+    domain: com.apple.loginwindow
+    key: TALLogoutSavesState
+    bool: false
+
 
 - command: chflags nohidden ~/Library/

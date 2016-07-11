@@ -16,6 +16,7 @@ homebrew_packages:
 
 homebrew_cask_packages:
   - alfred
+  - audacity
   - macvim
 
 pip_packages:

@@ -13,10 +13,10 @@
     key: PMPrintingExpandedStateForPrint
     bool: yes
 
-- name: OS X Global | Use function key to get at special meanings of keys
-  osx_defaults:
-    key: com.apple.keyboard.fnState
-    bool: yes
+# - name: OS X Global | Use function key to get at special meanings of keys
+#   osx_defaults:
+#     key: com.apple.keyboard.fnState
+#     bool: yes
 
 - name: OS X Global | Tab goes through all controls on dialogs
   osx_defaults:
@@ -49,17 +49,17 @@
     bool: yes
 
 
-- name: Finder | Use current directory as default seach scope
-  osx_defaults:
-    domain: com.apple.finder
-    key: FXDefaultSearchScope
-    string: "SCcf"
+# - name: Finder | Use current directory as default seach scope
+#   osx_defaults:
+#     domain: com.apple.finder
+#     key: FXDefaultSearchScope
+#     string: "SCcf"
 
-- name: Finder | Show Path Bar
-  osx_defaults:
-    domain: com.apple.finder
-    key: ShowPathbar
-    bool: true
+# - name: Finder | Show Path Bar
+#   osx_defaults:
+#     domain: com.apple.finder
+#     key: ShowPathbar
+#     bool: true
 
 - name: Finder | Show Status Bar
   osx_defaults:
@@ -79,26 +79,26 @@
     key: _FXShowPosixPathInTitle
     bool: true
 
-- name: Finder | Home folder on new windows
-  osx_defaults:
-    domain: com.apple.finder
-    key: NewWindowTarget
-    string: PfHm
-  notify: kill finder
+# - name: Finder | Home folder on new windows
+#   osx_defaults:
+#     domain: com.apple.finder
+#     key: NewWindowTarget
+#     string: PfHm
+#   notify: kill finder
 
-- name: Finder | Disable slow animations on shift
-  osx_defaults:
-    domain: com.apple.finder
-    key: FXEnableSlowAnimation
-    bool: no
-  notify: kill finder
+# - name: Finder | Disable slow animations on shift
+#   osx_defaults:
+#     domain: com.apple.finder
+#     key: FXEnableSlowAnimation
+#     bool: no
+#   notify: kill finder
 
-- name: Finder | Quicklook hide on defocus
-  osx_defaults:
-    domain: com.apple.finder
-    key: QLHidePanelOnDeactivate
-    bool: true
-  notify: kill finder
+# - name: Finder | Quicklook hide on defocus
+#   osx_defaults:
+#     domain: com.apple.finder
+#     key: QLHidePanelOnDeactivate
+#     bool: true
+#   notify: kill finder
 
 - name: Finder | Full paths in title
   osx_defaults:
@@ -134,12 +134,12 @@
     bool: true
   notify: kill dock
 
-- name: Dock | Dashboard disabled
-  osx_defaults:
-    domain: com.apple.dashboard
-    key: mcx-disabled
-    bool: yes
-  notify: kill dock
+# - name: Dock | Dashboard disabled
+#   osx_defaults:
+#     domain: com.apple.dashboard
+#     key: mcx-disabled
+#     bool: yes
+#   notify: kill dock
 
 
 - name: Menu | Disable transparency
@@ -175,11 +175,11 @@
     bool: true
 
 
-- name: Login Window | Don't save window state
-  osx_defaults:
-    domain: com.apple.loginwindow
-    key: TALLogoutSavesState
-    bool: false
+# - name: Login Window | Don't save window state
+#   osx_defaults:
+#     domain: com.apple.loginwindow
+#     key: TALLogoutSavesState
+#     bool: false
 
 
 - command: chflags nohidden ~/Library/

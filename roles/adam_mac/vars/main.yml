@@ -17,7 +17,12 @@ homebrew_packages:
 homebrew_cask_packages:
   - alfred
   - audacity
+  - evernote
+  - google-chrome
+  - iterm2
+  - lastpass
   - macvim
+
 
 pip_packages:
 

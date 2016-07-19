@@ -11,14 +11,6 @@
   tags:
     - brew
 
-- name: Uninstall old homebrew packages
-  homebrew:
-    name: '{{ item }}'
-    state: absent
-  with_items: '{{ homebrew_package_removals }}'
-  tags:
-    - brew
-
 - name: Install Java
   homebrew_cask:
     name: 'java'
@@ -30,7 +22,7 @@
   homebrew:
     name: '{{ item }}'
     state: latest
-  with_items: '{{ homebrew_packages }}'
+  with_items: "{{ lookup('file', 'homebrew_packages.txt').splitlines() }}"
   tags:
     - brew
 
@@ -38,7 +30,7 @@
   homebrew_cask:
     name: '{{ item }}'
     state: installed
-  with_items: '{{ homebrew_cask_packages }}'
+  with_items: "{{ lookup('file', 'homebrew_cask_packages.txt').splitlines() }}"
   tags:
     - brew
 
@@ -46,7 +38,7 @@
   pip:
     name: '{{ item }}'
     state: latest
-  with_items: '{{ pip_packages }}'
+  with_items: "{{ lookup('file', 'pip_packages.txt').splitlines() }}"
   tags:
     - pip
 
@@ -55,7 +47,7 @@
     name: '{{ item }}'
     state: latest
     global: yes
-  with_items: '{{ npm_packages }}'
+  with_items: "{{ lookup('file', 'npm_packages.txt').splitlines() }}"
   tags:
     - npm
 
@@ -63,5 +55,5 @@
   gem:
     name: '{{ item }}'
     state: latest
-  with_items: '{{ gem_packages }}'
+  with_items: "{{ lookup('file', 'gem_packages.txt').splitlines() }}"
   tags: [gem]

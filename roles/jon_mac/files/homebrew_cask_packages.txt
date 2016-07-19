@@ -1,0 +1,7 @@
+alfred
+audacity
+evernote
+google-chrome
+iterm2
+lastpass
+macvim

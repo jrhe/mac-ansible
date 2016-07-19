@@ -3,26 +3,6 @@ homebrew_taps:
   - caskroom/cask
   # - adamchainz/tap
 
-homebrew_package_removals:
-  # - python34
-
-homebrew_packages:
-  - homebrew/versions/elasticsearch17
-  - node
-  - postgres
-  - tmux
-  - vim
-  - zsh
-
-homebrew_cask_packages:
-  - alfred
-  - audacity
-  - evernote
-  - google-chrome
-  - iterm2
-  - lastpass
-  - macvim
-
 
 pip_packages:
 

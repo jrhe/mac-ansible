@@ -1,0 +1,6 @@
+homebrew/versions/elasticsearch17
+node
+postgres
+tmux
+vim
+zsh
